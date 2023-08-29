@@ -20,7 +20,7 @@
 
     <!-- Plugin css for this page -->
     <link rel="stylesheet"
-        href="{{ asset('backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css') }}../..">
+        href="{{ asset('backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css') }}">
     <!-- End plugin css for this page -->
     <!-- core:css -->
     <link rel="stylesheet" href="{{ asset('backend/assets/vendors/core/core.css') }}">

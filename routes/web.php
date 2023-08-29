@@ -54,4 +54,5 @@ Route::get('/admin/Register', [AdminController::class, 'AdminRegister'])->name('
 //Property Type All Route
 Route::controller(PropertyTypeController::class)->group(function(){
     Route::get('/all/type','AllType')->name('all.type');
+    Route::get('/add/type','AddType')->name('add.type');
 });

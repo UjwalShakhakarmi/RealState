@@ -13,4 +13,8 @@ class PropertyTypeController extends Controller
         $types = PropertyType::latest()->get();
         return view('backend.type.All_type',compact('types'));
     }
+    public function AddType()
+    {
+        return view('backend.type.Add_Type')
+    }
 }
