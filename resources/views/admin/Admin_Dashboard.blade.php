@@ -19,8 +19,7 @@
     <!-- End fonts -->
 
     <!-- Plugin css for this page -->
-    <link rel="stylesheet"
-        href="{{ asset('backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css') }}">
     <!-- End plugin css for this page -->
     <!-- core:css -->
     <link rel="stylesheet" href="{{ asset('backend/assets/vendors/core/core.css') }}">
@@ -100,8 +99,11 @@
             break;
     }
     @endif
-    </script>
+    </script> 
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="{{asset('backend/assets/js/code.js')}}"></script>
+<script src="{{asset('backend/assets/js/validate.min.js')}}"></script>
     <!-- start Datatables -->
     <script src="{{asset('backend/assets/vendors/datatables.net/jquery.dataTables.js') }}"></script>
     <script src="{{asset('backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js') }}"></script>

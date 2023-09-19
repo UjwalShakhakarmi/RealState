@@ -5,7 +5,7 @@
 
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <a href="{{ route('add.type') }}" class="btn btn-inverse-info">Add Property Type</a>
+            <a href="{{ route('add.amenities') }}" class="btn btn-inverse-info">Add Amenities </a>
         </ol>
     </nav>
 
@@ -21,20 +21,18 @@
                             <thead>
                                 <tr>
                                     <th>SN</th>
-                                    <th>Type Name</th>
-                                    <th>Type Icon</th>
+                                    <th>Amenities Name</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($types as $key => $item)
+                                @foreach($Amenities as $key => $item)
                                 <tr>
                                     <td>{{ $key+1 }}</td>
-                                    <td>{{ $item->type_name }}</td>
-                                    <td>{{ $item->type_icon }}</td>
+                                    <td>{{ $item->amenities_name }}</td>
                                     <td>
-                                        <a href="{{ route('edit.type',$item->id)}}" class="btn btn-inverse-warning"> Edit</a>
-                                        <a href="{{ route('delete.type',$item->id)}}" id="delete" class="btn btn-inverse-danger"> Delete</a>
+                                        <a href="{{ route('edit.amenities',$item->id) }}" class="btn btn-inverse-warning">Edit</a>
+                                        <a href="{{ route('delete.amenities',$item->id)}}" id="delete" class="btn btn-inverse-danger"> Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach

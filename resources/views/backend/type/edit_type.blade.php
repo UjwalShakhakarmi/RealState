@@ -13,14 +13,15 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h6 class="card-title">Add Type</h6>
+                        <h6 class="card-title">Edit Type</h6>
 
-                        <form class="forms-sample" method="post" action="{{ route('store.type') }}" >
+                        <form class="forms-sample" method="post" action="{{ route('update.type') }}" >
                             @csrf
+                            <input type="hidden" name="id" value="{{ $types->id }}">
                             <div class="mb-3">
                                 <label for="exampleInputUsername1" class="form-label">Type Name</label>
                                 <input type="text" class="form-control @error('type_name') is-invalid @enderror " 
-                                    id="type_name" name="type_name">
+                                    id="type_name" name="type_name" value="{{ $types->type_name }}">
                                 @error('type_name')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -28,7 +29,7 @@
                             <div class="mb-3">
                                 <label for="exampleInputUsername1" class="form-label">Type Icon</label>
                                 <input type="text" class="form-control @error('type_icon') is-invalid @enderror " 
-                                     name="type_icon">
+                                     name="type_icon" value="{{ $types->type_icon }}">
                                 @error('type_icon')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror

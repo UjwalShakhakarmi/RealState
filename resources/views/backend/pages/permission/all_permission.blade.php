@@ -5,7 +5,7 @@
 
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <a href="{{ route('add.type') }}" class="btn btn-inverse-info">Add Property Type</a>
+            <a href="{{ route('add.Permission') }}" class="btn btn-inverse-info">Add Permission </a>
         </ol>
     </nav>
 
@@ -21,20 +21,20 @@
                             <thead>
                                 <tr>
                                     <th>SN</th>
-                                    <th>Type Name</th>
-                                    <th>Type Icon</th>
+                                    <th>Permission Name</th>
+                                    <th>Group Name</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($types as $key => $item)
+                                @foreach($permissions as $key => $item)
                                 <tr>
                                     <td>{{ $key+1 }}</td>
-                                    <td>{{ $item->type_name }}</td>
-                                    <td>{{ $item->type_icon }}</td>
+                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->group_name }}</td>
                                     <td>
-                                        <a href="{{ route('edit.type',$item->id)}}" class="btn btn-inverse-warning"> Edit</a>
-                                        <a href="{{ route('delete.type',$item->id)}}" id="delete" class="btn btn-inverse-danger"> Delete</a>
+                                        <a href="{{ route('edit.Permission',$item->id) }}" class="btn btn-inverse-warning">Edit</a>
+                                        <a href="{{ route('delete.Permission',$item->id)}}" id="delete" class="btn btn-inverse-danger"> Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach

@@ -21,20 +21,32 @@
                             <thead>
                                 <tr>
                                     <th>SN</th>
-                                    <th>Type Name</th>
-                                    <th>Type Icon</th>
+                                    <th>SN</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
+                                    <th>Role</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($types as $key => $item)
+                                @foreach($alladmin as $key => $user)
                                 <tr>
                                     <td>{{ $key+1 }}</td>
-                                    <td>{{ $item->type_name }}</td>
-                                    <td>{{ $item->type_icon }}</td>
+                                    <td><img src="{{ (!empty($item->photo)) ? url('upload/admin_images/'.$item->photo) : url('upload/no_image.jpg') }}" style="width:70px;height:40px;" alt=""></td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->phone }}</td>
+                                    <td>{{ $user->address }}</td>
                                     <td>
-                                        <a href="{{ route('edit.type',$item->id)}}" class="btn btn-inverse-warning"> Edit</a>
-                                        <a href="{{ route('delete.type',$item->id)}}" id="delete" class="btn btn-inverse-danger"> Delete</a>
+                                        @foreach($user->roles as $role)
+                                        <span class="badge badge-pill bg-danger">{{ $role->name }}</span>
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('edit.admin',$user->id)}}" class="btn btn-inverse-warning"> Edit</a>
+                                        <a href="{{ route('delete.type',$user->id)}}" id="delete" class="btn btn-inverse-danger"> Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
